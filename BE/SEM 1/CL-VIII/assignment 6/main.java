@@ -304,23 +304,52 @@ class Volunteer_Report extends Report{
             groupQuries();
     }
     //method for fetching data as per report type
-    public void SingleQuries() {/**/};
-    public void groupQuries() {/**/};
+    public void SingleQuries() {/*
+        Queries for fetching Single data
+    */};
+    public void groupQuries() {/*
+        Queries for fetching Grouped data
+    */};
     
 }
 
 class Donation_Report extends Report{
     private Vector<Donation> donations ;
+    Donation_Report(Vector<Donation> donations)
+    {
+        this.donations = donations ;
+        if(this.donations.size() == 1)
+            SingleQuries();
+        else 
+            groupQuries();
+    }
     //method for fetching data as per report type
-    public void SingleQuries() {/* */};
-    public void groupQuries() {/* */};
+    public void SingleQuries() {/*
+        Queries for fetching Single data
+    */};
+    public void groupQuries() {/*
+        Queries for fetching Grouped data
+    */};
 }
 
 class Consumer_Report extends Report{
-    private Vector<Consumer> consumer ;
+    private Vector<Consumer> consumer_list ;
+        Consumer_Report(Vector<Consumer> Consumer_list)
+    {
+        this.Consumer_list = Consumer_list;
+        if (this.Consumer_list.size() == 1)
+            SingleQuries();
+        else
+            groupQuries();
+    }
+
     //method for fetching data as per report type
-    public void SingleQuries() {/* */};
-    public void groupQuries() {/* */};
+    public void SingleQuries() {/*
+        Queries for fetching Single data
+    */};
+    public void groupQuries() {/*
+        Queries for fetching Grouped data
+    */};
 }
 
 class Admin extends User {
@@ -351,9 +380,22 @@ class Admin extends User {
         return null;
     }
 
-    /* Get the report of Volunteer / Consumer / Donor */
+    /* Get the report of Volunteer*/
     public String VolunteerReport() {
         
+
+        return null;
+    }
+    /* Get the report of Consumer  */
+    public String ConsumerReport() {
+        
+
+        return null;
+    }
+
+    public String DonationReport() {
+        
+
         return null;
     }
 }
